@@ -17,6 +17,13 @@ flowchart TD
     E --> F[✅ Final Recommendations]
 ```
 ---
+<p>
+The recommendation engine in this project is built using a combination of techniques. The collaborative filtering module (src/collaborative_filtering.py) analyzes patterns across multiple users’ portfolios. If two users hold similar stocks, the system recommends to one user the stocks that the other holds but they do not, effectively learning from the collective behavior of investors. Complementing this, the content-based filtering module (src/content_based.py) focuses on stock attributes such as sector, risk level, and volatility. It recommends new stocks that share characteristics with those already in the user’s portfolio, allowing for suggestions that align with a user’s existing preferences. To balance the strengths of both methods, the hybrid recommender (src/hybrid_recommender.py) combines collaborative and content-based approaches, producing recommendations that consider both “what people like me bought” and “what looks like what I already like.”
+
+Once recommendations are generated, they are refined by the ranking system (src/ranker.py), which scores suggestions using multiple factors. This includes portfolio diversification (avoiding too much concentration in a single sector), risk-adjusted return metrics such as Sharpe ratio and volatility, and broader popularity or market trends. The result is a sorted list of recommendations optimized for balance and relevance. Finally, the evaluation module (src/evaluation.py) validates the system’s performance by measuring precision, recall, coverage, and diversity. These metrics are used to fine-tune the weights of the hybrid model and ensure that the recommendations are both accurate and useful.
+</p>
+
+---
 
 ## 🚀 Features
 - **Collaborative Filtering** (LightFM) for user–stock interactions  
