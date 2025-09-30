@@ -36,7 +36,7 @@ personalized-stock-recommender/
 │── main.py
 │── requirements.txt
 │── README.md
-'''
+```
 ---
 
 ## ⚙️ Installation
@@ -44,3 +44,4 @@ personalized-stock-recommender/
 git clone https://github.com/yourusername/personalized-stock-recommender.git
 cd personalized-stock-recommender
 pip install -r requirements.txt
+```
