@@ -36,7 +36,7 @@ personalized-stock-recommender/
 │── main.py
 │── requirements.txt
 │── README.md
-
+'''
 ---
 
 ## ⚙️ Installation
