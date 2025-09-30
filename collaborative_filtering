@@ -1,0 +1,26 @@
+import numpy as np
+import pandas as pd
+from lightfm import LightFM
+from lightfm.data import Dataset
+
+def build_cf_model(df, no_components=30, epochs=20):
+    dataset = Dataset()
+    dataset.fit(df['user_id'], df['stock_id'])
+    
+    interactions, _ = dataset.build_interactions(
+        (row['user_id'], row['stock_id'], row['interaction']) for _, row in df.iterrows()
+    )
+
+    model = LightFM(loss="warp", no_components=no_components)
+    model.fit(interactions, epochs=epochs, num_threads=4)
+    return model, dataset
+
+def recommend_cf(model, dataset, user_id, top_n=5):
+    user_ids = list(dataset.mapping()[0].keys())
+    stock_ids = list(dataset.mapping()[2].keys())
+    
+    user_index = dataset.mapping()[0][user_id]
+    scores = model.predict(user_index, np.arange(len(stock_ids)))
+    
+    top_items = np.argsort(-scores)[:top_n]
+    return [list(stock_ids)[i] for i in top_items]
