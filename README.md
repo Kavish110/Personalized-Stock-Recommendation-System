@@ -16,25 +16,26 @@ It is designed to mimic real-world personalization systems, like those used at R
 ---
 
 ## 📂 Project Structure
+
+```bash
 personalized-stock-recommender/
 │── data/
-│ └── sample_portfolios.csv
+│   └── sample_portfolios.csv
 │
 │── notebooks/
-│ └── EDA.ipynb
+│   └── EDA.ipynb
 │
 │── src/
-│ ├── data_loader.py
-│ ├── collaborative_filtering.py
-│ ├── content_based.py
-│ ├── hybrid_recommender.py
-│ ├── ranker.py
-│ ├── evaluation.py
+│   ├── data_loader.py
+│   ├── collaborative_filtering.py
+│   ├── content_based.py
+│   ├── hybrid_recommender.py
+│   ├── ranker.py
+│   ├── evaluation.py
 │
 │── main.py
 │── requirements.txt
 │── README.md
-
 
 ---
 
