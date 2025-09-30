@@ -2,7 +2,19 @@
 
 
 This project implements a **hybrid stock recommendation engine** that combines **collaborative filtering, content-based filtering, and learning-to-rank**.  
-It is designed to mimic real-world personalization systems, like those used at Robinhood, to help users discover the most relevant financial assets.  
+It is designed to mimic real-world personalization systems, to help users discover the most relevant financial assets.  
+
+### 🔹 Workflow Diagram  
+
+```mermaid
+flowchart TD
+    A[📂 Data Loader] --> B[📊 EDA & Insights]
+    B --> C1[🤝 Collaborative Filtering]
+    B --> C2[📑 Content-Based Filtering]
+    C1 --> D[⚡ Hybrid Recommender]
+    C2 --> D[⚡ Hybrid Recommender]
+    D --> E[📈 Ranker: Diversification & Risk Metrics]
+    E --> F[✅ Final Recommendations]
 
 ---
 
