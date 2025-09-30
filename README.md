@@ -15,7 +15,7 @@ flowchart TD
     C2 --> D[⚡ Hybrid Recommender]
     D --> E[📈 Ranker: Diversification & Risk Metrics]
     E --> F[✅ Final Recommendations]
-
+```
 ---
 
 ## 🚀 Features
